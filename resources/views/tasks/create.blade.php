@@ -4,16 +4,25 @@
 
     <h1>仕事新規作成ページ</h1>
     
-    {!! Form::model($task, ['route' => 'tasks.store']) !!}
-    
-        {!! Form::label('content', '仕事:') !!}
-        {!! Form::text('content') !!}
-        
-        {!! Form::label('status', 'ステータス') !!}
-        {!! Form::text('status') !!}
-        
-        {!! Form::submit('仕事の追加') !!}
-        
-    {!! Form::close() !!}
+  <div class="row">
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+          {!! Form::model($task, ['route' => 'tasks.store']) !!}
 
+          <div class="form-group">
+              {!! Form::label('content', '仕事:') !!}
+              {!! Form::text('content',null, ['class' => 'form-control']) !!}
+          </div>
+          
+           <div class="form-group">
+              {!! Form::label('status', 'ステータス') !!}
+              {!! Form::text('status',null, ['class' => 'form-control']) !!}
+           </div>
+          
+              {!! Form::submit('タスクの追加', ['class' => 'btn btn-primary']) !!}
+        
+          {!! Form::close() !!}
+          
+      </div>
+  </div>
+    
 @endsection
